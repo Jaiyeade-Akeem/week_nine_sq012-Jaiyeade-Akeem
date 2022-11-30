@@ -6,4 +6,5 @@ import com.example.fashionblog.Model.PostLikesRequest;
 public interface PostLikesService {
     ApiResponse<String> likePost(PostLikesRequest postLikesRequest);
     ApiResponse<String> unLikePost(PostLikesRequest postLikesRequest);
+    ApiResponse<String> countPostLikes(PostLikesRequest postLikesRequest);
 }

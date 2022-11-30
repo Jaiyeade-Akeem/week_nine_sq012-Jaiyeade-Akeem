@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CommentService {
     ApiResponse<CommentEntity> createComment(CommentRequest commentRequest);
-    List<CommentEntity> viewAllComment(PostEntity postEntity);
-    ApiResponse<String> deleteComment(Long id);
-    ApiResponse<CommentEntity> editComment(Long id);
+    List<CommentEntity> viewAllComment(Long id);
+    ApiResponse<String> deleteComment(CommentRequest commentRequest);
+    ApiResponse<CommentEntity> editComment(CommentRequest commentRequest);
 }

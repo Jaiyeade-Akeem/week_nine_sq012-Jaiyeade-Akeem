@@ -23,11 +23,9 @@ public class PostEntity {
     private  String postText;
 
     @Transient
-    private List<CommentEntity> comments = new ArrayList<>();
-
-    @Transient
     private Integer likes = 0;
 
     @CreationTimestamp
     private Timestamp createdAt;
+
 }

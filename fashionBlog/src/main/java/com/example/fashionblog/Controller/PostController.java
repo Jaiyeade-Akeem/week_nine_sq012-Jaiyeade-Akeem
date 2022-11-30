@@ -2,6 +2,7 @@ package com.example.fashionblog.Controller;
 
 import com.example.fashionblog.Entities.PostEntity;
 import com.example.fashionblog.Model.ApiResponse;
+import com.example.fashionblog.Model.PostLikesRequest;
 import com.example.fashionblog.Model.PostRequest;
 import com.example.fashionblog.ServiceImpl.PostServiceImpl;
 import lombok.AllArgsConstructor;
@@ -40,4 +41,5 @@ public class PostController {
     public ApiResponse<PostEntity> updatePost(@PathVariable("id") Long id, @RequestBody PostRequest postRequest){
         return postServiceImpl.editPost(id, postRequest);
     }
+
 }

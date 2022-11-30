@@ -7,10 +7,10 @@ import com.example.fashionblog.ServiceImpl.CommentServiceImpl;
 import com.example.fashionblog.ServiceImpl.CustomerServiceImpl;
 import com.example.fashionblog.ServiceImpl.PostServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/fashion-blog/comment")
@@ -21,5 +21,19 @@ public class CommentController {
     @PostMapping("/create-comment")
     public ApiResponse<CommentEntity> createComment(@RequestBody CommentRequest commentRequest){
         return commentService.createComment(commentRequest);
+    }
+    @GetMapping("/view-all-comment/{postId}")
+    public List<CommentEntity> view_all_comment_of_a_post(@PathVariable Long postId){
+        return commentService.viewAllComment(postId);
+    }
+
+    @DeleteMapping("/delete")
+    public ApiResponse<String> delete_comment(@RequestBody CommentRequest commentRequest){
+        return commentService.deleteComment(commentRequest);
+    }
+
+    @PutMapping("/edit-comment")
+    public ApiResponse<CommentEntity> update(@RequestBody CommentRequest commentRequest){
+        return commentService.editComment(commentRequest);
     }
 }
